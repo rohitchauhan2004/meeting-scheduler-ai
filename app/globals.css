@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/* Root theme variables */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,6 +14,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode support */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +23,86 @@
   }
 }
 
+/* Body styling */
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================= */
+/* CALENDAR STYLING */
+/* ========================= */
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  background: white;
+  color: #1f2937;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: inherit;
+}
+
+/* Month navigation */
+
+.react-calendar__navigation {
+  margin-bottom: 8px;
+}
+
+.react-calendar__navigation button {
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Day tiles */
+
+.react-calendar__tile {
+  color: #1f2937;
+  border-radius: 6px;
+  padding: 8px 0;
+}
+
+/* Hover effect */
+
+.react-calendar__tile:hover {
+  background: #e5e7eb;
+}
+
+/* Selected date */
+
+.react-calendar__tile--active {
+  background: #334155 !important;
+  color: white !important;
+}
+
+/* Today highlight */
+
+.react-calendar__tile--now {
+  background: #e2e8f0;
+  font-weight: 600;
+}
+
+/* Disabled dates */
+
+.react-calendar__tile:disabled {
+  color: #cbd5e1;
+}
+
+/* Scrollbar styling for slots */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
